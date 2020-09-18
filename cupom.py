@@ -13,4 +13,11 @@ inscricao_estadual = "244.898.500.113"
 
 def imprime_dados_loja():
     # Implemente aqui
-    return "" 
+    return f'''{nome_loja}
+{logradouro}, {numero} {complemento}
+{bairro} - {municipio} - {estado}
+CEP:{cep} Tel {telefone}
+{observacao}
+CNPJ: {cnpj}
+IE: {inscricao_estadual}
+'''

@@ -37,18 +37,18 @@ def test_exercicio2_tudo_vazio():
     global cnpj
     global inscricao_estadual
     
-    nome_loja = ""
-    logradouro = ""
-    numero = 0
-    complemento = ""
-    bairro = ""
-    municipio = ""
-    estado = ""
-    cep = ""
-    telefone = ""
-    observacao = ""
-    cnpj = ""
-    inscricao_estadual = ""
+    cupom.nome_loja = ""
+    cupom.logradouro = ""
+    cupom.numero = 0
+    cupom.complemento = ""
+    cupom.bairro = ""
+    cupom.municipio = ""
+    cupom.estado = ""
+    cupom.cep = ""
+    cupom.telefone = ""
+    cupom.observacao = ""
+    cupom.cnpj = ""
+    cupom.inscricao_estadual = ""
 
     assert cupom.imprime_dados_loja() == '''
 , 0 
@@ -74,19 +74,25 @@ def test_exercicio2_customizado():
     global inscricao_estadual
     
     # Defina seus próprios valores para as variáveis a seguir
-    nome_loja = ""
-    logradouro = ""
-    numero = 0
-    complemento = ""
-    bairro = ""
-    municipio = ""
-    estado = ""
-    cep = ""
-    telefone = ""
-    observacao = ""
-    cnpj = ""
-    inscricao_estadual = ""
+    cupom.nome_loja = "Smelly Cat"
+    cupom.logradouro = "Rua Etheria"
+    cupom.numero = 205
+    cupom.complemento = "Perto da velhinha que mora em uma caverna"
+    cupom.bairro = "Br. Templo do Cristal"
+    cupom.municipio = "Beach City"
+    cupom.estado = "BC"
+    cupom.cep = "8051-604"
+    cupom.telefone = "(66)4002-8922"
+    cupom.observacao = "Por Favor ignorar os exército Intergalácticos em guerra tentando dominar o planeta"
+    cupom.cnpj = "53.409.609/0001-85"
+    cupom.inscricao_estadual = "512.670.302.653"
+    expected = "Smelly Cat\n"
+    expected += "Rua Etheria, 205 Perto da velhinha que mora em uma caverna\n"
+    expected += "Br. Templo do Cristal - Beach City - BC\n"
+    expected += "CEP:8051-604 Tel (66)4002-8922\n"
+    expected += "Por Favor ignorar os exército Intergalácticos em guerra tentando dominar o planeta\n"
+    expected +="CNPJ: 53.409.609/0001-85\n"
+    expected += "IE: 512.670.302.653\n"
 
     #E atualize o texto esperado abaixo
-    assert cupom.imprime_dados_loja() == '''
-'''
+    assert cupom.imprime_dados_loja() == expected
